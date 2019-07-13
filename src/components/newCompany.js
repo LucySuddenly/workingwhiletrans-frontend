@@ -23,7 +23,7 @@ class NewCompany extends Component {
 
     submitForm = (ev) => {
         ev.preventDefault()
-        fetch("https://transfundr-backend.herokuapp.com/beacons", {
+        fetch("http://localhost:3000/companies", {
           method: "POST",
           headers:{
             "Content-Type": "application/json",
@@ -32,9 +32,13 @@ class NewCompany extends Component {
           body: JSON.stringify(this.state)
         })
         .then(resp => resp.json())
-        .then(json => {console.log(json)
-            
-        })
+        .then(json => {
+            if (json.message) {
+                // add toasted notes
+                // toaster.notify(json.message, {duration: 3000})
+              } else {
+                  this.props.history.push(`/companies/${json.id}`)
+                }})
     }
 
     render() {
