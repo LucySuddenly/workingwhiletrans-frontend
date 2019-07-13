@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Form from 'react-bootstrap/Form'
 import FormControl from 'react-bootstrap/FormControl'
 import Button from 'react-bootstrap/Button'
+import {withRouter} from 'react-router';
 
 class Search extends Component {
     constructor(){
@@ -20,6 +21,15 @@ class Search extends Component {
             Accept: "application/json"
           },
           body: JSON.stringify(this.state)
+        })
+        .then(resp => resp.json())
+        .then(json => {
+            if (json["none"]) {
+                this.props.history.push(`/companies/new`)
+            } else {
+                this.props.updateSearchResults(json)
+                this.props.history.push('/results')
+            }
         })
     }
 
@@ -41,4 +51,4 @@ class Search extends Component {
     }
 }
 
-export default Search;
+export default withRouter(Search);
