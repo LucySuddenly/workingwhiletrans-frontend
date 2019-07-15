@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {withRouter} from 'react-router';
+import Review from './review.js'
 
 class CompanyShow extends Component {
     constructor(props){
@@ -9,7 +10,8 @@ class CompanyShow extends Component {
                 name: null,
                 website: null,
                 image_url: null,
-                description: null
+                description: null,
+                reviews: []
             }
         }
         this.fetchShowData()
@@ -25,12 +27,19 @@ class CompanyShow extends Component {
 
     render() {
         return (
+            <>
             <div>
                 <h1>{this.state.company.name}</h1>
                 <a href={this.state.company.website}>{this.state.company.website}</a>
                 <img src={this.state.company.image_url}/>
                 <p>{this.state.company.description}</p>
             </div>
+            <div>
+                {this.state.company.reviews.map(review => {
+                    return <Review review={review} />
+                })}
+            </div>
+            </>
         );
     }
 }
