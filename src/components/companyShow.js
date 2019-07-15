@@ -60,6 +60,7 @@ class CompanyShow extends Component {
                 this.props.history.push(`/reviews/${json.id}`)
             }
         })
+    }
 
     render() {
         return (
