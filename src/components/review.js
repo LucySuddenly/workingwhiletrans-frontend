@@ -8,7 +8,7 @@ class Review extends Component {
     render() {
         return (
             <div>   
-                <h3>{this.props.review.title}</h3>
+                <a href={`/reviews/${this.props.review.id}`}><h3>{this.props.review.title}</h3></a>
                 <h6>{this.props.review.job_title}</h6>
                 <StarRatings starRatedColor="gold" rating={this.props.review.rating}/>
                 <p>{this.props.review.body}</p>
