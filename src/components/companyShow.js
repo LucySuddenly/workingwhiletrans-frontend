@@ -4,6 +4,7 @@ import Review from './review.js'
 import Form from 'react-bootstrap/Form'
 import FormControl from 'react-bootstrap/FormControl'
 import Button from 'react-bootstrap/Button'
+import StarRatings from 'react-star-ratings'
 
 class CompanyShow extends Component {
     constructor(props){
@@ -17,6 +18,7 @@ class CompanyShow extends Component {
                 description: null,
                 reviews: []
             },
+            ratings_average: 0,
             title: "",
             job_title: "",
             body: "",
@@ -29,7 +31,8 @@ class CompanyShow extends Component {
         fetch(`http://localhost:3000/companies/${this.props.match.params.id}`)
         .then(resp => resp.json())
         .then(json => this.setState({
-            company: json
+            company: json.company,
+            ratings_average: json.ratings_average
         }))
     }
 
@@ -67,6 +70,7 @@ class CompanyShow extends Component {
             <>
             <div>
                 <h1>{this.state.company.name}</h1>
+                <StarRatings starRatedColor="gold" rating={this.state.ratings_average}/>
                 <a href={this.state.company.website}>{this.state.company.website}</a>
                 <img src={this.state.company.image_url}/>
                 <p>{this.state.company.description}</p>
