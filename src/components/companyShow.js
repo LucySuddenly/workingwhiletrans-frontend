@@ -10,6 +10,7 @@ class CompanyShow extends Component {
         super(props)
         this.state = {
             company: {
+                id: null,
                 name: null,
                 website: null,
                 image_url: null,
@@ -39,8 +40,9 @@ class CompanyShow extends Component {
     }
     
     submitForm = (ev) => {
-        let bodyObj = {...this.state} 
-        delete bodyObj["company"]
+        let review = {...this.state} 
+        delete review["company"]
+        review["company_id"] = this.state.company.id
         ev.preventDefault()
         fetch("http://localhost:3000/reviews", {
           method: "POST",
@@ -48,9 +50,16 @@ class CompanyShow extends Component {
             "Content-Type": "application/json",
             Accept: "application/json"
           },
-          body: JSON.stringify({bodyObj})
+          body: JSON.stringify({review})
         })
-    }
+        .then(resp => resp.json())
+        .then(json => {
+            if (json["message"]) {
+                // add toasted notes message
+            } else {
+                this.props.history.push(`/reviews/${json.id}`)
+            }
+        })
 
     render() {
         return (
