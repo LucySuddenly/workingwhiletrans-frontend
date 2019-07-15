@@ -26,7 +26,10 @@ class CompanyShow extends Component {
     render() {
         return (
             <div>
-                
+                <h1>{this.state.company.name}</h1>
+                <a href={this.state.company.website}>{this.state.company.website}</a>
+                <img src={this.state.company.image_url}/>
+                <p>{this.state.company.description}</p>
             </div>
         );
     }
