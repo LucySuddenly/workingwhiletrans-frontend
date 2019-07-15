@@ -25,7 +25,7 @@ class App extends Component {
         <Switch>
           <Route exact path="/" render={()=>(<Search/>)}/>
           <Route exact path="/companies/new" render={() =>(<NewCompany/>)}/>
-          <Route exact path="/companies/:id" render={() => (<CompanyShow/>)}/>
+          <Route exact path="/companies/:id" render={() => (<CompanyShow {...this.props} />)}/>
         </Switch>
       </Router>
       </>
