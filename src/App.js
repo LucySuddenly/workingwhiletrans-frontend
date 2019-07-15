@@ -6,19 +6,6 @@ import NewCompany from './components/newCompany.js'
 import Navbar from 'react-bootstrap/Navbar'
 
 class App extends Component {
-  constructor(){
-    super()
-    this.state = {
-      results: []
-    }
-  }
-
-  updateSearchResults = (json) => {
-    this.setState({
-      results: json
-    })
-  }
-
 
   render() {
     return(
@@ -34,7 +21,7 @@ class App extends Component {
       </Navbar>
       <Router>
         <Switch>
-          <Route exact path="/" render={()=>(<Search updateSearchResults={this.updateSearchResults}/>)}/>
+          <Route exact path="/" render={()=>(<Search/>)}/>
           <Route exact parth="/companies/new" render={() =>(<NewCompany/>)}/>
         </Switch>
       </Router>

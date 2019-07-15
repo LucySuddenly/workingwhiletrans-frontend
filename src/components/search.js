@@ -27,7 +27,6 @@ class Search extends Component {
             if (json["none"]) {
                 this.props.history.push(`/companies/new`)
             } else {
-                this.props.updateSearchResults(json)
                 this.props.history.push(`/companies/${json.id}`)
             }
         })
