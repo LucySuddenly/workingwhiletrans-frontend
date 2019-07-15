@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import StarRatings from 'react-star-ratings'
 
 class Review extends Component {
     constructor(props){
@@ -9,7 +10,7 @@ class Review extends Component {
             <div>   
                 <h3>{this.props.review.title}</h3>
                 <h6>{this.props.review.job_title}</h6>
-                <h4>{this.props.review.rating}</h4>
+                <StarRatings starRatedColor="gold" rating={this.props.review.rating}/>
                 <p>{this.props.review.body}</p>
             </div>
         );
