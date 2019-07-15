@@ -37,6 +37,20 @@ class CompanyShow extends Component {
             [ev.target.name]: ev.target.value
         })
     }
+    
+    submitForm = (ev) => {
+        let bodyObj = {...this.state} 
+        delete bodyObj["company"]
+        ev.preventDefault()
+        fetch("http://localhost:3000/reviews", {
+          method: "POST",
+          headers:{
+            "Content-Type": "application/json",
+            Accept: "application/json"
+          },
+          body: JSON.stringify({bodyObj})
+        })
+    }
 
     render() {
         return (
