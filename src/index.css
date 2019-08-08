@@ -22,8 +22,17 @@ body {
   position: relative;
 }
 
-#new-review { grid-area: 2 / 3 / 3 / 4; } 
+#new-review-hidden { 
+  display: none;
+ } 
+
+ #new-review {
+  grid-area: 2 / 3 / 3 / 4;
+ }
+
 #review-container { grid-area: 3 / 2 / 4 / 5; } 
+
+#review-container-hidden { grid-area: 2 / 2 / 3 / 5; } 
 
 #company-img {
   

@@ -22,7 +22,8 @@ class CompanyShow extends Component {
             title: "",
             job_title: "",
             body: "",
-            rating: ""
+            rating: "",
+            showForm: false
         }
         this.fetchShowData()
     }
@@ -65,6 +66,22 @@ class CompanyShow extends Component {
         })
     }
 
+    showOrHideForm = () => {
+        if (this.state.showForm == false) {
+            document.getElementById("new-review-hidden").id = "new-review"
+            document.getElementById("review-container-hidden").id = "review-container"
+            this.setState(
+                {showForm: true}
+            )
+        } else {
+            document.getElementById("new-review").id = "new-review-hidden"
+            document.getElementById("review-container").id = "review-container-hidden"
+            this.setState(
+                {showForm: false}
+            )
+        }
+    }
+
     render() {
         return (
             <div id="container">
@@ -77,22 +94,23 @@ class CompanyShow extends Component {
                     <img src={this.state.company.image_url}/>
                     </div>
                     <p>{this.state.company.description}</p>
+                    <button onClick={this.showOrHideForm}>Add Review</button>
                 </div>
             </div>
-            <div id="new-review">
-            <Form onSubmit={(ev)=> this.submitForm(ev)}>
-                    <Form.Label>Title of Review</Form.Label>
-                    <FormControl value={this.state.title} onChange={(ev) => this.onTextFormChange(ev)} name="title" type="text" placeholder="Title of Review"/>
-                    <Form.Label>Your Job Title</Form.Label>
-                    <FormControl value={this.state.job_title} onChange={(ev) => this.onTextFormChange(ev)} name="job_title" type="text" placeholder="Your Job Title"/>
-                    <Form.Label>Review</Form.Label>
-                    <FormControl value={this.state.body} onChange={(ev) => this.onTextFormChange(ev)} name="body" as="textarea" placeholder="Your Review" rows="5"/>
-                    <Form.Label>Company Description</Form.Label>
-                    <FormControl value={this.state.rating} onChange={(ev) => this.onTextFormChange(ev)} name="rating" type="number" placeholder="Rating from 1-5"/>
-                    <Button variant="primary" type="submit">Submit New Review</Button>
-            </Form>
-            </div>
-            <div id="review-container">
+                <div id="new-review-hidden">
+                    <Form onSubmit={(ev)=> this.submitForm(ev)}>
+                            <Form.Label>Title of Review</Form.Label>
+                            <FormControl value={this.state.title} onChange={(ev) => this.onTextFormChange(ev)} name="title" type="text" placeholder="Title of Review"/>
+                            <Form.Label>Your Job Title</Form.Label>
+                            <FormControl value={this.state.job_title} onChange={(ev) => this.onTextFormChange(ev)} name="job_title" type="text" placeholder="Your Job Title"/>
+                            <Form.Label>Review</Form.Label>
+                            <FormControl value={this.state.body} onChange={(ev) => this.onTextFormChange(ev)} name="body" as="textarea" placeholder="Your Review" rows="5"/>
+                            <Form.Label>Company Description</Form.Label>
+                            <FormControl value={this.state.rating} onChange={(ev) => this.onTextFormChange(ev)} name="rating" type="number" placeholder="Rating from 1-5"/>
+                            <Button variant="primary" type="submit">Submit New Review</Button>
+                    </Form>
+                </div>
+            <div id="review-container-hidden">
                 {this.state.company.reviews.map(review => {
                     return <Review review={review} />
                 })}
