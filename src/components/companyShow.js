@@ -67,15 +67,19 @@ class CompanyShow extends Component {
 
     render() {
         return (
-            <>
-            <div>
-                <h1>{this.state.company.name}</h1>
-                <StarRatings starRatedColor="gold" rating={this.state.ratings_average}/>
-                <a href={this.state.company.website}>{this.state.company.website}</a>
-                <img src={this.state.company.image_url}/>
-                <p>{this.state.company.description}</p>
+            <div id="container">
+            <div id="company-display-container">
+                <div id="company-display">
+                    <h1>{this.state.company.name}</h1>
+                    <StarRatings starRatedColor="gold" rating={this.state.ratings_average}/><br/>
+                    <a href={this.state.company.website}>{this.state.company.website}</a>
+                    <div id="company-img">
+                    <img src={this.state.company.image_url}/>
+                    </div>
+                    <p>{this.state.company.description}</p>
+                </div>
             </div>
-            <div>
+            <div id="new-review">
             <Form onSubmit={(ev)=> this.submitForm(ev)}>
                     <Form.Label>Title of Review</Form.Label>
                     <FormControl value={this.state.title} onChange={(ev) => this.onTextFormChange(ev)} name="title" type="text" placeholder="Title of Review"/>
@@ -88,12 +92,12 @@ class CompanyShow extends Component {
                     <Button variant="primary" type="submit">Submit New Review</Button>
             </Form>
             </div>
-            <div>
+            <div id="review-container">
                 {this.state.company.reviews.map(review => {
                     return <Review review={review} />
                 })}
             </div>
-            </>
+            </div>
         );
     }
 }
