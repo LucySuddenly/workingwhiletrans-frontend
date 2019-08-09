@@ -84,7 +84,7 @@ class CompanyShow extends Component {
 
     render() {
         return (
-            <div id="container">
+            <div id="company-show-container">
             <div id="company-display-container">
                 <div id="company-display">
                     <p id="company-name">{this.state.company.name}</p>
@@ -104,7 +104,7 @@ class CompanyShow extends Component {
                             <Form.Label>Your Job Title</Form.Label>
                             <FormControl value={this.state.job_title} onChange={(ev) => this.onTextFormChange(ev)} name="job_title" type="text" placeholder="Your Job Title"/>
                             <Form.Label>Review</Form.Label>
-                            <FormControl value={this.state.body} onChange={(ev) => this.onTextFormChange(ev)} name="body" as="textarea" placeholder="Your Review" rows="5"/>
+                            <FormControl value={this.state.body} onChange={(ev) => this.onTextFormChange(ev)} name="body" as="textarea" placeholder="Your Review" rows="8"/>
                             <Form.Label>Company Description</Form.Label>
                             <FormControl value={this.state.rating} onChange={(ev) => this.onTextFormChange(ev)} name="rating" type="number" placeholder="Rating from 1-5"/>
                             <Button variant="primary" type="submit">Submit New Review</Button>

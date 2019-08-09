@@ -3,7 +3,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-#container { 
+#company-show-container { 
   display: grid; 
   grid-template-columns: .5fr .5fr 1fr .5fr .5fr; 
   grid-template-rows: 1fr 1fr 1fr; 
@@ -12,6 +12,7 @@ body {
 }
 
 #company-display-container { 
+
   grid-area: 1 / 2 / 2 / 5;
 }
 
@@ -20,6 +21,10 @@ body {
   transform: translateY(-50%);
   top: 50%;
   position: relative;
+  background-color: white;
+  margin-top: 20px;
+  padding-bottom: 20px;
+
 }
 
 #new-review-hidden { 
@@ -28,6 +33,12 @@ body {
 
  #new-review {
   grid-area: 2 / 3 / 3 / 4;
+  background-color: white;
+  margin-top: 20px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-right: 20px;
+  padding-left: 20px;
  }
 
 #review-container { grid-area: 3 / 2 / 4 / 5; } 
@@ -50,4 +61,8 @@ body {
 #company-name {
   font-size: 3em;
   font-weight: bold;
+}
+
+body {
+  background-color: antiquewhite;
 }
