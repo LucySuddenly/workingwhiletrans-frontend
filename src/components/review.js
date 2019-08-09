@@ -7,7 +7,7 @@ class Review extends Component {
     }
     render() {
         return (
-            <div>   
+            <div className="review container">   
                 <a href={`/reviews/${this.props.review.id}`}><h3>{this.props.review.title}</h3></a>
                 <h6>{this.props.review.job_title}</h6>
                 <StarRatings starRatedColor="gold" rating={this.props.review.rating}/>

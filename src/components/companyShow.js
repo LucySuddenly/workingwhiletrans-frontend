@@ -85,7 +85,7 @@ class CompanyShow extends Component {
     render() {
         return (
             <div id="company-show-container">
-            <div id="company-display-container">
+            <div id="company-display-container" className="container">
                 <div id="company-display">
                     <p id="company-name">{this.state.company.name}</p>
                     <StarRatings starRatedColor="gold" rating={this.state.ratings_average}/>({`${this.state.company.reviews.length}`})<br/>
@@ -94,10 +94,10 @@ class CompanyShow extends Component {
                     <img src={this.state.company.image_url}/>
                     </div>
                     <p>{this.state.company.description}</p>
-                    <button onClick={this.showOrHideForm}>Add Review</button>
+                    <Button onClick={this.showOrHideForm}>Add Review</Button>
                 </div>
             </div>
-                <div id="new-review-hidden">
+                <div id="new-review-hidden" className="container">
                     <Form onSubmit={(ev)=> this.submitForm(ev)}>
                             <Form.Label>Title of Review</Form.Label>
                             <FormControl value={this.state.title} onChange={(ev) => this.onTextFormChange(ev)} name="title" type="text" placeholder="Title of Review"/>
