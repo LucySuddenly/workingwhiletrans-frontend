@@ -87,8 +87,8 @@ class CompanyShow extends Component {
             <div id="container">
             <div id="company-display-container">
                 <div id="company-display">
-                    <h1>{this.state.company.name}</h1>
-                    <StarRatings starRatedColor="gold" rating={this.state.ratings_average}/><br/>
+                    <p id="company-name">{this.state.company.name}</p>
+                    <StarRatings starRatedColor="gold" rating={this.state.ratings_average}/>({`${this.state.company.reviews.length}`})<br/>
                     <a href={this.state.company.website}>{this.state.company.website}</a>
                     <div id="company-img">
                     <img src={this.state.company.image_url}/>
