@@ -81,3 +81,24 @@ body {
   margin: 20px auto;
   width: 80%;
 }
+
+#search-container {
+  display: grid; 
+  grid-template-columns: 1fr .5fr 2fr .5fr 1fr; 
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr; 
+}
+
+#search { 
+  grid-area: 5 / 3 / 5 / 4; 
+  text-align: center;
+  padding: 20px 20px 20px 20px;
+  
+} 
+  
+.searchform {
+  display: inline-block;
+}
+
+#search-input {
+  width: 75%;
+}

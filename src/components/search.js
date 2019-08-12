@@ -40,11 +40,17 @@ class Search extends Component {
 
     render() {
         return (
-            <div id = "SearchDiv">
-                <Form onSubmit={(ev) => this.submitSearch(ev)}>
-                    <FormControl name="searchForm" type="text" placeholder="Search for companies to review" onChange={(ev) => this.searchFieldChange(ev)}/>
-                    <Button type="submit">Search</Button>
-                </Form>
+            <div id="search-container">
+                <div id="search" className="container">
+                    <Form onSubmit={(ev) => this.submitSearch(ev)} >
+                        <div className="searchform" id="search-input">
+                        <FormControl name="searchForm" type="text" placeholder="Search for companies to review" onChange={(ev) => this.searchFieldChange(ev)} />
+                        </div>
+                        <div className="searchform">
+                        <Button type="submit">Search</Button>
+                        </div>
+                    </Form>
+                </div>
             </div>
         );
     }
