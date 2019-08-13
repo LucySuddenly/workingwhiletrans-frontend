@@ -102,3 +102,22 @@ body {
 #search-input {
   width: 75%;
 }
+
+.search-result {
+  margin: 50px 50px 50px 50px;
+  text-align: center;
+  padding: 20px 10px 10px 10px;
+}
+
+.search-result:hover {
+  cursor: pointer;
+  position: relative; 
+  top: -5px;
+}
+
+.image-container img {
+  display: block;
+  max-width: 33%;
+  margin-left: auto;
+  margin-right:auto
+}
