@@ -1,14 +1,19 @@
 import React, { Component } from 'react';
 import StarRatings from 'react-star-ratings'
+import {withRouter} from 'react-router';
 
 class Review extends Component {
     constructor(props){
         super(props)
     }
+
+    linkToReviewShow = (e) => {
+        this.props.history.push(`/reviews/${e.currentTarget.id}`)
+    }
     render() {
         return (
-            <div className="review container">   
-                <a href={`/reviews/${this.props.review.id}`}><h3>{this.props.review.title}</h3></a>
+            <div onClick={(e) => this.linkToReviewShow(e)} id={this.props.review.id} className="review container">   
+                <h3>{this.props.review.title}</h3>
                 <h6>{this.props.review.job_title}</h6>
                 <StarRatings starRatedColor="gold" rating={this.props.review.rating}/>
                 <p>{this.props.review.body}</p>
@@ -17,4 +22,4 @@ class Review extends Component {
     }
 }
 
-export default Review;
+export default withRouter(Review);

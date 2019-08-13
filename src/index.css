@@ -80,6 +80,13 @@ body {
   padding: 20px 20px 20px 15px;
   margin: 20px auto;
   width: 80%;
+  text-align: center;
+}
+
+.review:hover{
+  cursor: pointer;
+  position: relative; 
+  top: -5px;
 }
 
 #search-container {
@@ -141,4 +148,8 @@ body {
   text-align: center;
   padding: 20px 10px 10px 10px; 
   
+}
+
+#company-link {
+  cursor: pointer;
 }

@@ -29,15 +29,23 @@ class ReviewShow extends Component {
         }))
     }
 
+    linkToCompanyShow = () => {
+        this.props.history.push(`/companies/${this.state.review.company.id}`)
+    }
+
     render() {
         return (
-            <div>
-                <a href={`/companies/${this.state.review.company.id}`} ><h1>{this.state.review.company.name}</h1></a>
-                <img src={this.state.review.company.image_url}/>
-                <h3>{this.state.review.title}</h3>
-                <h6>{this.state.review.job_title}</h6>
-                <StarRatings starRatedColor="gold" rating={this.state.review.rating}/>
-                <p>{this.state.review.body}</p>
+            <div className="review container">
+                <div id="company-link" onClick={this.linkToCompanyShow}>
+                    <h1>{this.state.review.company.name}</h1>
+                    <div className="image-container">
+                    <img src={this.state.review.company.image_url}/>
+                    </div>
+                    <h3>{this.state.review.title}</h3>
+                    <h6>{this.state.review.job_title}</h6>
+                    <StarRatings starRatedColor="gold" rating={this.state.review.rating}/>
+                    <p>{this.state.review.body}</p>
+                </div>
             </div>
         );
     }
