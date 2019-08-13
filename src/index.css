@@ -127,9 +127,18 @@ body {
   grid-template-columns: 1fr 1fr 1fr; 
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr; 
   text-align: center;
+   
 }
 
 #results-container {
   grid-area: 1 / 2 / 6 / 3; 
   display: inline-block;
+}
+
+#new-company { 
+  grid-area: 1 / 1 / 2 / 2; 
+  margin: 20px 20px 20px 20px;
+  text-align: center;
+  padding: 20px 10px 10px 10px; 
+  
 }

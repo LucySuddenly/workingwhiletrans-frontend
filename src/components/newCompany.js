@@ -44,9 +44,6 @@ class NewCompany extends Component {
     render() {
         return (
             <div>
-                <div>
-                <h3>Your search returned no results, chances are the company you searched for just isn't in our database yet. Create your company below!</h3>
-                </div>
                 <Form onSubmit={(ev)=> this.submitForm(ev)}>
                     <Form.Label>Company Name</Form.Label>
                     <FormControl value={this.state.name} onChange={(ev) => this.onTextFormChange(ev)} name="name" type="text" placeholder="Company Name"/>
