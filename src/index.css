@@ -142,14 +142,6 @@ body {
   display: inline-block;
 }
 
-#new-company { 
-  grid-area: 1 / 1 / 2 / 2; 
-  margin: 10px 10px 10px 10px;
-  text-align: center;
-  padding: 20px 10px 10px 10px; 
-  
-}
-
 #company-link {
   cursor: pointer;
 }

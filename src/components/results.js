@@ -24,10 +24,10 @@ export class Results extends Component {
                         })
                     }
                     
-                </div>
-                <div id="new-company" className="container">
+                <div onClick={this.linkToNewCompany} className="search-result container">
                     <p>Don't see what you're looking for?</p>
-                    <Button onClick={this.linkToNewCompany}>Add New Company</Button>
+                    <Button>Add New Company</Button>
+                </div>
                 </div>
             </div>
             </>
