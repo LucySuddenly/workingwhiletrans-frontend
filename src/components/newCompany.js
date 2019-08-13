@@ -43,7 +43,7 @@ class NewCompany extends Component {
 
     render() {
         return (
-            <div>
+            <div id="new-company-form" className="container">
                 <Form onSubmit={(ev)=> this.submitForm(ev)}>
                     <Form.Label>Company Name</Form.Label>
                     <FormControl value={this.state.name} onChange={(ev) => this.onTextFormChange(ev)} name="name" type="text" placeholder="Company Name"/>
