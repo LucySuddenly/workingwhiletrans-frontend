@@ -10,13 +10,15 @@ export class Results extends Component {
     render() {
         
         return (
-            <div>
-                {
-                this.props.searchResults.map(element => {
-                    return <Result result={element}/>
-                })
-                }
-                
+            <div id="results-container-grid">
+                <div id="results-container">
+                    {
+                        this.props.searchResults.map(element => {
+                            return <Result result={element}/>
+                        })
+                    }
+                    
+                </div>
             </div>
         );
     }
