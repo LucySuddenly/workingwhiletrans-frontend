@@ -165,4 +165,17 @@ body {
     padding: 20px 20px 20px 20px;
     
   } 
+
+  #company-show-container { 
+    display: grid; 
+    grid-template-columns: .05fr .05fr 1fr .05fr .05fr; 
+    grid-template-rows: .5fr .5fr .5fr; 
+    grid-column-gap: 0px;
+    grid-row-gap: 10px;
+  }
+  
+  #company-display-container { 
+    margin-top: 20px;
+    grid-area: 1 / 2 / 2 / 5;
+  }
 }
