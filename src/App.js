@@ -31,9 +31,6 @@ class App extends Component {
         <Navbar.Brand href="/">
           Working While Trans
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav"> 
-        </Navbar.Collapse>
       </Navbar>
       <Router>
         <Switch>

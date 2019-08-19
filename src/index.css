@@ -96,7 +96,7 @@ body {
 }
 
 #search { 
-  grid-area: 5 / 3 / 5 / 4; 
+  grid-area: 3 / 3 / 3 / 4; 
   text-align: center;
   padding: 20px 20px 20px 20px;
   
@@ -107,7 +107,7 @@ body {
 }
 
 #search-input {
-  width: 75%;
+  width: auto;
 }
 
 .search-result {
@@ -149,4 +149,20 @@ body {
 #new-company-form {
   padding: 10px 20px 20px 20px;
   margin-top: 20px;
+}
+
+@media (max-width: 774px) {
+
+  #search-container {
+    display: grid; 
+    grid-template-columns: .15fr 2fr .15fr; 
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr; 
+  }
+  
+  #search { 
+    grid-area: 3 / 2 / 3 / 3; 
+    text-align: center;
+    padding: 20px 20px 20px 20px;
+    
+  } 
 }
