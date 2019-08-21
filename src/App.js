@@ -7,6 +7,7 @@ import CompanyShow from './components/companyShow.js'
 import ReviewShow from './components/reviewShow.js'
 import Navbar from 'react-bootstrap/Navbar'
 import Results from './components/results.js'
+import EditCompany from './components/editCompany.js'
 
 
 class App extends Component {
@@ -38,6 +39,7 @@ class App extends Component {
           <Route exact path="/results" render={() =>(<Results {...this.props} searchResults={this.state.searchResults} />)} />
           <Route exact path="/companies/new" render={() =>(<NewCompany/>)}/>
           <Route exact path="/companies/:id" render={() => (<CompanyShow {...this.props} />)}/>
+          <Route exact path="/companies/:id/edit" render={() => (<EditCompany {...this.props}/>)}/>
           <Route exact path="/reviews/:id" render={() => (<ReviewShow/>)}/>
         </Switch>
       </Router>
