@@ -9,7 +9,7 @@ class Search extends Component {
     constructor(){
         super()
         this.state={
-            searchForm: ""
+            searchForm: " "
         }
     }
 
