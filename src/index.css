@@ -3,6 +3,16 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.btn-primary, .btn-primary:active, .btn-primary:visited {
+  background-color: rgb(223, 141, 171) !important;
+  border-color: rgb(223, 141, 171) !important;
+}
+
+.btn-primary:hover{
+  background-color: rgb(211, 109, 128) !important;
+  border-color: rgb(211, 109, 128) !important;
+}
+
 #company-show-container { 
   display: grid; 
   grid-template-columns: .5fr .5fr 1fr .5fr .5fr; 
