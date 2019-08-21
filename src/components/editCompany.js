@@ -35,8 +35,8 @@ export class editCompany extends Component {
 
     submitForm = (ev) => {
         ev.preventDefault()
-        fetch("http://localhost:3000/companies", {
-          method: "POST",
+        fetch(`http://localhost:3000/companies/${this.props.match.params.id}`, {
+          method: "PATCH",
           headers:{
             "Content-Type": "application/json",
             Accept: "application/json"
