@@ -3,6 +3,7 @@ import Form from 'react-bootstrap/Form'
 import FormControl from 'react-bootstrap/FormControl'
 import Button from 'react-bootstrap/Button'
 import {withRouter} from 'react-router';
+import logo from '../images/logo.png';
 
 class Search extends Component {
     constructor(){
@@ -38,10 +39,13 @@ class Search extends Component {
     render() {
         return (
             <div id="search-container">
+                <div className="image-container" id="logo-container">
+                    <img src={logo}/>
+                </div>
                 <div id="search" className="container">
                     <Form onSubmit={(ev) => this.submitSearch(ev)} >
                         <div className="searchform" id="search-input">
-                        <FormControl name="searchForm" type="text" placeholder="Search for companies to review" onChange={(ev) => this.searchFieldChange(ev)} />
+                        <FormControl name="searchForm" type="text" placeholder="Search Companies" onChange={(ev) => this.searchFieldChange(ev)} />
                         </div>
                         <div className="searchform">
                         <Button type="submit">Search</Button>
