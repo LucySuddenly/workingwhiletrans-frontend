@@ -3,6 +3,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+nav {
+  background-color:  !important;
+  background-image: linear-gradient(rgb(0, 168, 240), rgb(223, 141, 171));
+}
+
 .btn-primary, .btn-primary:active, .btn-primary:visited {
   background-color: rgb(223, 141, 171) !important;
   border-color: rgb(223, 141, 171) !important;

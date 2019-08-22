@@ -28,7 +28,7 @@ class App extends Component {
     return(
 
       <>
-      <Navbar collapseOnSelect expand="md" sticky="top" bg="dark" variant="dark">
+      <Navbar sticky="top" variant="dark">
         <Navbar.Brand href="/">
           Working While Trans
         </Navbar.Brand>
