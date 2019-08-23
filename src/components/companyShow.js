@@ -91,7 +91,7 @@ class CompanyShow extends Component {
             <div id="company-show-container">
             <div id="company-display-container" className="container">
                 <div id="company-display">
-                    <Button onClick={this.handleEditClick}>Edit</Button>
+                    <Button id="edit-button" onClick={this.handleEditClick}>Edit</Button>
                     <p id="company-name">{this.state.company.name}</p>
                     <StarRatings starRatedColor="gold" rating={this.state.ratings_average}/>({`${this.state.company.reviews.length}`})<br/>
                     <a href={this.state.company.website} target="_blank">{this.state.company.website}</a>
