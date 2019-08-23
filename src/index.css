@@ -14,7 +14,7 @@ nav {
   padding-top: .3125rem;
   padding-bottom: .3125rem;
   margin-right: 1rem;
-  font-size: 1.75rem;
+  font-size: 1.6rem;
   line-height: inherit;
   white-space: nowrap;
   color: white;
@@ -63,6 +63,7 @@ nav {
   padding-top: 10px;
   padding-right: 20px;
   padding-left: 20px;
+
  }
 
 #review-container { 
