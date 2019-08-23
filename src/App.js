@@ -29,9 +29,11 @@ class App extends Component {
 
       <>
       <Navbar sticky="top" variant="dark">
-        <Navbar.Brand href="/">
-          Working While Trans
-        </Navbar.Brand>
+        <a href="/">
+          <Navbar.Text id="title">
+            WORKING WHILE TRANS
+          </Navbar.Text>
+        </a>
       </Navbar>
       <Router>
         <Switch>

@@ -1,11 +1,23 @@
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: 'Heebo', sans-serif;
 }
 
 nav {
-  background-color:  !important;
   background-image: linear-gradient(rgb(0, 168, 240), rgb(223, 141, 171));
+  font-family: 'Permanent Marker', cursive;
+}
+
+#title {
+  display: inline-block;
+  padding-top: .3125rem;
+  padding-bottom: .3125rem;
+  margin-right: 1rem;
+  font-size: 1.75rem;
+  line-height: inherit;
+  white-space: nowrap;
+  color: white;
 }
 
 .btn-primary, .btn-primary:active, .btn-primary:visited {
