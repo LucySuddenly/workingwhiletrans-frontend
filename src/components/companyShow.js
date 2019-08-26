@@ -5,6 +5,8 @@ import Form from 'react-bootstrap/Form'
 import FormControl from 'react-bootstrap/FormControl'
 import Button from 'react-bootstrap/Button'
 import StarRatings from 'react-star-ratings'
+import toaster from 'toasted-notes';
+import 'toasted-notes/src/styles.css';
 
 class CompanyShow extends Component {
     constructor(props){
@@ -59,7 +61,7 @@ class CompanyShow extends Component {
         .then(resp => resp.json())
         .then(json => {
             if (json["message"]) {
-                // add toasted notes message
+                toaster.notify(json.message, {duration: 3000})
             } else {
                 this.props.history.push(`/reviews/${json.id}`)
             }
