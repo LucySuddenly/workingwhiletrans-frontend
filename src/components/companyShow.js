@@ -31,7 +31,7 @@ class CompanyShow extends Component {
     }
 
     fetchShowData = () => {
-        fetch(`http://localhost:3000/companies/${this.props.match.params.id}`)
+        fetch(`https://working-while-trans-backend.herokuapp.com/companies/${this.props.match.params.id}`)
         .then(resp => resp.json())
         .then(json => this.setState({
             company: json.company,
@@ -50,7 +50,7 @@ class CompanyShow extends Component {
         delete review["company"]
         review["company_id"] = this.state.company.id
         ev.preventDefault()
-        fetch("http://localhost:3000/reviews", {
+        fetch("https://working-while-trans-backend.herokuapp.com/reviews", {
           method: "POST",
           headers:{
             "Content-Type": "application/json",

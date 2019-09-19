@@ -25,7 +25,7 @@ export class editCompany extends Component {
     }
 
     fetchCompanyData = () => {
-        fetch(`http://localhost:3000/companies/${this.props.match.params.id}`)
+        fetch(`https://working-while-trans-backend.herokuapp.com/companies/${this.props.match.params.id}`)
         .then(resp => resp.json())
         .then(json => this.setState({
             name: json.company.name,
@@ -37,7 +37,7 @@ export class editCompany extends Component {
 
     submitForm = (ev) => {
         ev.preventDefault()
-        fetch(`http://localhost:3000/companies/${this.props.match.params.id}`, {
+        fetch(`https://working-while-trans-backend.herokuapp.com/companies/${this.props.match.params.id}`, {
           method: "PATCH",
           headers:{
             "Content-Type": "application/json",

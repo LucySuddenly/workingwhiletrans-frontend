@@ -15,7 +15,7 @@ class Search extends Component {
 
     submitSearch = (ev) => {
         ev.preventDefault()
-        fetch("http://localhost:3000/search", {
+        fetch("https://working-while-trans-backend.herokuapp.com/search", {
           method: "POST",
           headers:{
             "Content-Type": "application/json",

@@ -22,7 +22,7 @@ class ReviewShow extends Component {
     }
 
     fetchShowData = () => {
-        fetch(`http://localhost:3000/reviews/${this.props.match.params.id}`)
+        fetch(`https://working-while-trans-backend.herokuapp.com/reviews/${this.props.match.params.id}`)
         .then(resp => resp.json())
         .then(json => this.setState({
             review: json

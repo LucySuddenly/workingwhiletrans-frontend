@@ -25,7 +25,7 @@ class NewCompany extends Component {
 
     submitForm = (ev) => {
         ev.preventDefault()
-        fetch("http://localhost:3000/companies", {
+        fetch("https://working-while-trans-backend.herokuapp.com/companies", {
           method: "POST",
           headers:{
             "Content-Type": "application/json",
